@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <section class="page-intro">
+    <h1>{{ if eq .Section "posts" }}Writing{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ if eq .Section "posts" }}
+      <p>Big-picture questions and hands-on work, filed where you can find them again.</p>
+    {{ else if .Description }}
+      <p>{{ .Description }}</p>
+    {{ end }}
+  </section>
+
+  {{ $pages := .RegularPages }}
+  {{ if gt (len $pages) 0 }}
+    {{ $paginator := .Paginate $pages }}
+    <ol class="entry-list listing">
+      {{ range $paginator.Pages }}
+        {{ partial "post-row.html" . }}
+      {{ end }}
+    </ol>
+    {{ if or $paginator.HasPrev $paginator.HasNext }}
+      <nav class="pagination" aria-label="Writing pages">
+        {{ with $paginator.Prev }}<a href="{{ .URL }}">← Newer</a>{{ end }}
+        <span>Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+        {{ with $paginator.Next }}<a href="{{ .URL }}">Older →</a>{{ end }}
+      </nav>
+    {{ end }}
+  {{ else }}
+    <p class="empty-note">No notes here yet. The page is ready when the writing is.</p>
+  {{ end }}
+{{ end }}

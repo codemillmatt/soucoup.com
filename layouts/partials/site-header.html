@@ -1,0 +1,12 @@
+<header class="site-header">
+  <a class="wordmark" href="{{ "/" | relURL }}"{{ if .IsHome }} aria-current="page"{{ end }}>
+    <span class="wordmark-name">Matt Soucoup</span>
+  </a>
+  <nav class="primary-nav" aria-label="Primary navigation">
+    <ul>
+      {{ range site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ partial "icon.html" .Identifier }}{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>

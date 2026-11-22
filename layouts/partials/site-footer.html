@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <nav aria-label="Elsewhere">
+    <a href="https://www.linkedin.com/in/msoucoup">{{ partial "icon.html" "linkedin" }}LinkedIn</a>
+    <a href="https://github.com/codemillmatt">{{ partial "icon.html" "github" }}GitHub</a>
+    <a href="{{ "index.xml" | relURL }}">{{ partial "icon.html" "rss" }}RSS</a>
+  </nav>
+  <label hidden data-theme-picker>Theme
+    <select aria-label="Color theme">
+      <option value="system">System</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </label>
+  <small>© {{ now.Year }} Matt Soucoup</small>
+</footer>

@@ -1,0 +1,46 @@
+{{ define "main" }}
+  <article class="article-shell">
+    <header class="article-header">
+      {{ if eq .Section "posts" }}<a class="back-link" href="{{ "posts/" | relURL }}">← All writing</a>{{ end }}
+      <h1>{{ .Title }}</h1>
+      {{ if eq .Section "posts" }}
+        <p class="article-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+          <span aria-hidden="true">·</span>
+          <span>{{ .ReadingTime }} min read</span>
+        </p>
+      {{ end }}
+      {{ with .Description }}<p class="article-deck">{{ . }}</p>{{ end }}
+      {{ with .Params.headerSketch }}
+        <img class="header-sketch" src="{{ . | relURL }}" alt="" width="400" height="90">
+      {{ end }}
+    </header>
+
+    {{ $toc := .TableOfContents }}
+    {{ $tocText := $toc | plainify | strings.TrimSpace }}
+    {{ if and (eq .Section "posts") site.Params.showTableOfContents $tocText }}
+      <aside class="table-of-contents" aria-label="On this page">
+        <details>
+          <summary>On this page</summary>
+          {{ $toc }}
+        </details>
+      </aside>
+    {{ end }}
+
+    <div class="article-body">
+      {{ .Content }}
+    </div>
+
+    {{ if eq .Section "posts" }}
+      <footer class="article-footer">
+        {{ with .Params.tags }}<p aria-label="Topics">{{ delimit . " · " }}</p>{{ end }}
+      </footer>
+      {{ if or .PrevInSection .NextInSection }}
+        <nav class="post-navigation" aria-label="More writing">
+          {{ with .NextInSection }}<a href="{{ .RelPermalink }}"><span aria-hidden="true">←</span><span class="visually-hidden">Newer post:</span> {{ .Title }}</a>{{ end }}
+          {{ with .PrevInSection }}<a href="{{ .RelPermalink }}"><span class="visually-hidden">Older post:</span>{{ .Title }} <span aria-hidden="true">→</span></a>{{ end }}
+        </nav>
+      {{ end }}
+    {{ end }}
+  </article>
+{{ end }}

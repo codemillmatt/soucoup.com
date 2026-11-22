@@ -1,0 +1,21 @@
+{{ define "main" }}
+  {{ $posts := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+  {{ range first 1 $posts }}
+    <article>
+      <header>
+        <h1><a class="title-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        <p class="article-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time> · {{ .ReadingTime }} min read</p>
+      </header>
+      <div class="article-body">{{ .Summary }}</div>
+      {{ if .Truncated }}<a href="{{ .RelPermalink }}">Continue reading <span aria-hidden="true">→</span></a>{{ end }}
+    </article>
+  {{ else }}
+    <h1>Writing</h1><p>No posts yet.</p>
+  {{ end }}
+  {{ with after 1 $posts }}
+    <section class="earlier"><h2>Earlier posts</h2>
+      <ol class="entry-list">{{ range first 4 . }}{{ partial "post-row.html" . }}{{ end }}</ol>
+      <a href="{{ "posts/" | relURL }}">Writing archive</a>
+    </section>
+  {{ end }}
+{{ end }}

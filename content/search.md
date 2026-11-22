@@ -1,5 +1,5 @@
 ---
 title: "Search"
 layout: "search"
-placeholder: "Search posts..."
+description: "Search Matt Soucoup’s essays and code."
 ---
