@@ -1,0 +1,14 @@
+<li class="entry-row">
+  <article>
+    <p class="entry-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ .ReadingTime }} min read</span>
+    </p>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p class="entry-summary">{{ .Summary | plainify | htmlUnescape | truncate 220 }}</p>
+    {{ with .Params.tags }}
+      <p class="entry-tags">{{ delimit . " · " }}</p>
+    {{ end }}
+  </article>
+</li>

@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <section class="page-intro">
+    <h1>{{ .Title }}</h1>
+    <p>Find an idea, a code sample, or the thing you almost remember reading.</p>
+  </section>
+  <section class="search-panel" data-site-search data-index-url="{{ "index.json" | relURL }}">
+    <form role="search" data-search-form>
+      <label for="site-search-input">Search writing</label>
+      <div class="search-controls">
+        <input id="site-search-input" name="q" type="search" autocomplete="off" placeholder="Try “.NET” or “agents”">
+        <button type="submit">Search</button>
+      </div>
+    </form>
+    <p class="search-status" data-search-status role="status" aria-live="polite">Search is ready.</p>
+    <ol class="entry-list search-results" data-search-results></ol>
+    <button class="retry-button" type="button" data-search-retry hidden>Try loading the index again</button>
+  </section>
+{{ end }}
+{{ define "scripts" }}
+  <script src="{{ "js/search.js" | relURL }}" defer></script>
+{{ end }}

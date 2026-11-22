@@ -30,8 +30,8 @@ A working developer advocate's view on **the developer's place in an agentic, AI
 
 ## Capabilities and Constraints
 
-- Current pages: home (post list), posts, about, subscribe, search (Hugo JSON index), RSS.
-- Currently uses the PaperMod theme as a git submodule (`themes/PaperMod`); the earlier Terminal theme submodule (`themes/terminal`) is still registered. Both are scaffolding, not commitments.
+- Current pages: home (brand, proof, recent writing), posts archive, about, subscribe, search (Hugo JSON index), and RSS.
+- The PaperMod and Terminal theme submodules remain registered but are inactive; the live site uses custom Hugo templates in `layouts/` and static assets in `static/`.
 - Newsletter planned through Buttondown; not yet connected (`content/subscribe.md`).
 - Code highlighting, copy buttons, reading time, and table of contents are needed for technical posts.
 - **Undecided:** portfolio structure (separate talks/courses/projects pages vs. a single page), newsletter launch timing, comments, and analytics.
@@ -39,7 +39,7 @@ A working developer advocate's view on **the developer's place in an agentic, AI
 ## Brand Commitments
 
 - **Name:** the brand is **Matt Soucoup**, the person. "soucoup" is the domain and handle, not the brand name.
-- **Voice:** mostly curious and exploratory (thinking out loud, working through problems) combined with opinionated and direct (clear positions backed by experience), with a practical, hype-skeptical edge. It should read as a person, not a content operation.
+- **Voice:** mostly curious and exploratory (thinking out loud, working through problems) combined with opinionated and direct (clear positions backed by experience), with a practical, hype-skeptical edge. Warmth and occasional humor should put readers at ease without undercutting authority; the experience should feel lively, never gimmicky. It should read as a person, not a content operation.
 - **Hard constraint:** the site must be intriguing without feeling gimmicky, and must not read as generic or AI-generated. That matters more than usual, since the subject is AI and authenticity is the credibility test.
 
 ## Evidence on Hand
@@ -51,7 +51,7 @@ Confirmed by Matt:
 
 Public record to verify and source before use (from his Microsoft advocate bio): previously founded a .NET and web development consultancy; spoke at Xamarin Evolve, CodeMash, VS Live, and Mobile Era; past Telerik Developer Network contributor.
 
-Not yet gathered: talk recordings and links, the Pluralsight course list, article links, a headshot, and social handles (placeholders remain in `content/about.md`). No testimonials, metrics, or press quotes exist; do not fabricate any.
+Official profile links are included for Pluralsight, Microsoft Ignite, .NET Conf, LinkedIn, and GitHub. Not yet gathered: talk recordings, the Pluralsight course list, additional article links, and a headshot. No testimonials, metrics, or press quotes exist; do not fabricate any.
 
 ## Product Principles
 

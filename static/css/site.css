@@ -1,0 +1,66 @@
+:root {
+  color-scheme: light dark;
+  --page: light-dark(#fff, #191a20);
+  --ink: light-dark(#242832, #eeeaf1);
+  --muted: light-dark(#606675, #b7b4c2);
+  --link: light-dark(#285ab2, #a5c6ff);
+  --plum: light-dark(#52377b, #d5b8f2);
+  --rule: light-dark(#dfe4ed, #42424d);
+  --wash: light-dark(#edf3fc, #32394c);
+  --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--page);
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0 auto; width: min(43rem, calc(100% - 2.5rem)); line-height: 1.6; overflow-wrap: break-word; }
+main { margin: clamp(1.8rem, 5vw, 3.3rem) 0; }
+a { color: var(--link); text-underline-offset: .2em; }
+a:hover { color: var(--plum); }
+:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.site-header, .site-footer, .primary-nav ul, .site-footer nav, .pagination, .post-navigation {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem 1.2rem;
+}
+.site-header, .site-footer { justify-content: space-between; }
+.site-header { padding: 1.3rem 0 1rem; border-bottom: 1px solid var(--rule); }
+.wordmark { color: var(--plum); font-size: 1.12rem; font-weight: 700; text-decoration: none; }
+.primary-nav ul, .entry-list { list-style: none; margin: 0; padding: 0; }
+.primary-nav a, .site-footer, .back-link { font-size: .91rem; }
+.primary-nav a { text-decoration: none; white-space: nowrap; }
+.primary-nav a, .site-footer nav a { display: inline-flex; align-items: center; gap: .32em; }
+.link-icon { flex: none; width: 1em; height: 1em; }
+.primary-nav a:hover, .primary-nav a[aria-current="page"] { text-decoration: underline; }
+h1, h2, h3 { line-height: 1.22; text-wrap: balance; letter-spacing: -.027em; }
+h1 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.45rem); font-weight: 650; }
+h2 { margin: 1.8em 0 .45em; font-size: 1.48rem; }
+h3 { margin: .4rem 0; font-size: 1.22rem; }
+.title-link { color: inherit; text-decoration: none; }
+.title-link:hover { text-decoration: underline; }
+.article-meta, .entry-meta, .entry-tags, .search-status, small { font-size: .86rem; color: var(--muted); }
+.article-body { font-family: Palatino, "Palatino Linotype", Georgia, serif; font-size: clamp(1.12rem, 2vw, 1.24rem); line-height: 1.65; }
+.article-body :is(h2,h3,h4), .copy-code { font-family: var(--sans); }
+.article-body img { max-width: 100%; height: auto; }
+.article-body pre, .article-body table { display: block; overflow-x: auto; }
+.article-body pre { padding: 1.5rem 1rem 1rem; line-height: 1.4; }
+.article-body code { font-size: .86em; }
+.article-body :not(pre) > code { background: var(--wash); padding: .08em .23em; }
+.article-body td, .article-body th { border-bottom: 1px solid var(--rule); padding: .4em; }
+.highlight { position: relative; }
+.copy-code { position: absolute; top: .25rem; right: .25rem; font-size: .75rem; }
+.back-link { display: inline-block; margin-bottom: 1rem; }
+.entry-row, .article-footer, .site-footer { border-top: 1px solid var(--rule); padding-block: 1rem; }
+.site-footer { margin-top: 3rem; }
+.entry-meta, .entry-summary, .entry-tags { margin: .3rem 0; }
+.article-deck, .entry-summary { color: var(--muted); }
+.search-controls { display: flex; gap: .5rem; margin-top: .4rem; }
+input, button { font: inherit; }
+.search-controls input { min-width: 0; flex: 1; border: 1px solid var(--muted); border-radius: .3rem; padding: .5rem; }
+.search-controls button, .retry-button { background: var(--link); color: var(--page); border: 0; border-radius: .3rem; padding: .5rem .9rem; cursor: pointer; }
+.post-navigation { justify-content: space-between; }
+.post-navigation a { max-width: 100%; }
+.header-sketch { display: block; width: min(100%, 25rem); height: auto; margin: 1rem 0; }
+[data-theme-picker] select { font: inherit; color: var(--ink); background: var(--page); border: 1px solid var(--muted); border-radius: .3em; padding: .2em; }
+.skip-link:not(:focus), .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+::selection { background: var(--link); color: var(--page); }

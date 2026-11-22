@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ site.Language.LanguageCode | default "en-us" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+    <meta name="color-scheme" content="light dark">
+    <script>
+      try {
+        const theme = localStorage.getItem("reading-theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      } catch (error) { console.debug("Theme preference is unavailable.", error); }
+    </script>
+    <title>{{ if .IsHome }}{{ site.Title }} · Writing{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.Title }} RSS" href="{{ "index.xml" | relURL }}">
+    <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+    <script src="{{ "js/site.js" | relURL }}" defer></script>
+  </head>
+  <body class="page-{{ .Kind }}{{ with .Section }} section-{{ . }}{{ end }}">
+    <a class="skip-link" href="#main">Skip to content</a>
+    {{ partial "site-header.html" . }}
+    <main id="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "site-footer.html" . }}
+    {{ block "scripts" . }}{{ end }}
+  </body>
+</html>

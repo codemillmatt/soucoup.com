@@ -1,29 +1,26 @@
 ---
-title: "About"
+title: "About Matt"
+description: "Meet Matt Soucoup: .NET developer advocate at Microsoft, Pluralsight author, and speaker."
 ---
 
-# About soucoup
+I’m Matt Soucoup. I lead .NET developer advocacy at Microsoft, and I’m interested in the part of software that can’t be measured by how quickly the code gets typed.
 
-Welcome! I'm the author behind this blog.
+As AI agents take on more of the implementation, I keep coming back to a practical question: where do developers add value, and what problems are still ours to solve? This site is where I work through that question—from broad ideas to the C# details.
 
-## What I Write About
+## What I write about
 
-- **AI & Machine Learning** - Practical tutorials and commentary on the AI revolution
-- **Software Development** - Code, architecture, and best practices
-- **Tech Industry** - Opinions and analysis on where things are heading
+- The developer’s role in an agentic coding future.
+- The decisions, trade-offs, and responsibilities behind good software.
+- Practical .NET and C# work, including the code and the rough edges.
 
-## The Blog
+I’m curious before I’m certain, but I’m not neutral about the work. A confident autocomplete is not an accountability plan.
 
-This site is built with Hugo and the Terminal theme, hosted on GitHub Pages. Every post is a markdown file, and the site rebuilds automatically when I merge a PR.
+## Teaching and speaking
 
-Why this setup? I wanted to own my content, write in markdown, and have a workflow that feels like coding.
+Alongside the writing, I give [conference talks]({{< relref "talks-and-courses.md#talks" >}}) and teach [courses on Pluralsight]({{< relref "talks-and-courses.md#courses" >}}).
 
-## Connect
+## Around the web
 
-- GitHub: [your-github]
-- Twitter: [your-twitter]
-- Email: [your-email]
-
----
-
-Want to know when I publish something new? [Subscribe here](/subscribe).
+- [Connect on LinkedIn](https://www.linkedin.com/in/msoucoup)
+- [Find my code on GitHub](https://github.com/codemillmatt)
+- [Follow new writing with RSS](/index.xml)
